@@ -1,0 +1,36 @@
+.last-item{
+    margin-bottom: 0 !important;
+}
+
+.education_main_wrapper:after {
+    content: "";
+    position: absolute;
+    background-color: #ff517e;
+    width: 2px;
+    top: 142px;
+    bottom: 90px;
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+    z-index: 0;
+}
+
+.education_mright .education_right {
+    float: left;
+    margin-left: 38px;
+}
+
+@media (min-width:768px) {
+	.port_togglebox {
+		display:none;
+	}
+    .education_main_wrapper .education_box {
+        margin-top: 20px;
+    }
+    .port_heading_wrapper {
+        margin-bottom: 3rem
+    }
+
+}
+
+

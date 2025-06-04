@@ -1,0 +1,103 @@
+.progress-bar {
+    background-color: bink;
+}
+.port_education_setions {
+    /* margin-top: 50px; */
+    padding-bottom: 115px;
+}
+
+@media (min-width: 767px) {
+  .port_skills_setions,.port_about_setions,.port_experience_setions{
+    margin-top:10rem ;
+    margin-bottom:10rem ;
+  }
+  .port_education_setions {
+    margin-top:10rem;
+     
+  }
+}
+@media (max-width: 767px) {
+  .port_skills_setions,.port_about_setions,.port_experience_setions{
+    margin-top:3rem ;
+    margin-bottom:3rem ;
+  }
+  .port_education_setions {
+    margin-top:3rem;
+  }
+}
+
+
+/* .port_about_setions,.port_experience_setions,.port_services_setions{
+    margin:50px 0;
+}
+
+.selfintro_section {
+    margin-bottom: 50px;
+}
+
+
+/* @media (max-width:767px) {
+.port_about_setions,.port_experience_setions,.port_services_setions{
+    margin:20px 0;
+}
+.port_education_setions {
+    margin-top: 20px;
+    padding-bottom: 50px;
+}
+
+}
+
+
+@media (max-width: 767px) {
+  .port_about_setions,
+  .port_experience_setions,
+  .port_services_setions {
+    margin: 2rem 0;
+    padding: 0 1rem;
+  }
+
+  .selfintro_section {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .port_education_setions {
+    margin-top: 2rem;
+    padding-bottom: 3rem;
+  }
+} */
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Improve section transitions */
+.section-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.section-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Add loading states */
+.loading-skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.1)
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  to {
+    background-position: -200% 0;
+  }
+}

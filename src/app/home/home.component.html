@@ -1,0 +1,147 @@
+<div
+  class="port_sec_warapper"
+  style="background:#f8fafc"
+>
+  <ng-container 
+      *ngIf="!isLoading; else mainLoader">
+    <div class="h-100 selfintro_section port_bannerbg_wrapper position-relative"
+    style="padding-left: 4%; padding-right: 4%">
+         <div class="row h-100 align-items-center">
+      <!-- Left Column -->
+      <div class="col-lg-6 fade-in-left perspective-container">
+        <div class="my-5">
+          <span class="badge bg-secondary p-3 rounded-pill">
+            <i class="bi bi-clock-history me-2"></i>Available for Freelance Work
+          </span>
+        </div>
+
+        <h1 class="display-3 fw-bolder mb-2 text-dark mega-text">
+          Hi there, I'm <br />
+          <span class="gradient-text position-relative text-glow">{{
+            personalData?.aboutMe?.name
+          }}</span>
+        </h1>
+
+         <p class="lead fs-4 text-muted mb-4 fw-normal">
+          Creative {{ personalData?.aboutMe?.jobTitle }}
+        </p> 
+
+        <!-- Update Skills Section -->
+        <div class="skills-progress mb-5 glass-card">
+          
+            <div *ngFor="let skill of personalData?.skills">
+              <div class="skill-item mb-4" *ngIf="skill.inHome == 'true'">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-1"
+                >
+                  <span class="fw-semibold text-dark">{{ skill.name }}</span>
+                  <span
+                    class="badge bg-white border text-secondary px-3 py-1 small shadow-sm"
+                    >{{ skill.level }}%</span
+                  >
+                </div>
+                <div
+                  class="progress rounded-pill"
+                  style="height: 5px; background-color: #e9ecef"
+                >
+                  <div
+                    class="bg-secondary"
+                    [ngStyle]="
+                      skill.level >= 80
+                        ? { 'background-color': 'pink' }
+                        : { 'backgroud-color': '#6c757d' }
+                    "
+                    [style.width]="skill.level + '%'"
+                    style="transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1)"
+                  ></div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="d-flex gap-3 mb-5">
+          <button
+            class="portfolio_btn btn_primary"
+            [routerLink]="['/projects']"
+          >
+            <span class="first_text"
+              ><i class="bi bi-rocket-takeoff me-2"></i>View Projects</span
+            >
+            <span class="second_text">View</span>
+          </button>
+          <button
+            class="portfolio_btn btn_secondary"
+            [routerLink]="['/contact']"
+          >
+            <span class="first_text"
+              ><i class="bi bi-file-person me-2"></i>Hire Me</span
+            >
+            <span class="second_text">Contact</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+       <div class="col-lg-6 d-none d-lg-block fade-in-right">
+        <div class="floating-grid">
+          <div class="row g-4">
+            <div
+              *ngFor="let skill of personalData?.softSkills; let isLast = last"
+              [ngClass]="{ 'col-12': isLast, 'col-6': !isLast }"
+            >
+              <div class="feature-card hover-lift">
+                <div
+                  class="card-body text-center p-5 position-relative overflow-hidden"
+                >
+                  <div class="card-icon-bg"></div>
+                  <i
+                    class="display-6 mb-3 text-secondary"
+                    [ngClass]="skill.icon"
+                  ></i>
+                  <h3 class="card-title">{{ skill.name }}</h3>
+                  <p class="text-muted">{{ skill.description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+    </div> 
+  <div class="port_about_setions page_scroll" data-scroll="0" id="about_sec">
+    <app-about-me [aboutMe]="personalData?.aboutMe ?? null"></app-about-me>
+  </div>
+
+  <div class="port_services_setions port_skills_setions">
+    <app-skills [skills]="personalData?.skills ?? []"></app-skills>
+  </div>
+
+  <div class="port_experience_setions">
+    <app-experience [experiences]="personalData?.experiences ?? []"></app-experience>
+  </div>
+
+    <div class="port_education_setions">
+    <app-education [educations]="personalData?.education ?? []"></app-education>
+  </div> 
+ 
+  </ng-container>
+ <ng-template #mainLoader>
+      <div class="row justify-content-center align-items-center " style="height:90vh;">
+        <div class="col-md-6 text-center">
+          <div class="spinner-border text-secondary py-auto" role="status" style="width: 3rem; height: 3rem;">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <p class="mt-3 text-muted">Loading portfolio data...</p>
+        </div>
+      </div>
+  </ng-template>
+
+  
+
+
+
+
+
+
+
+</div>

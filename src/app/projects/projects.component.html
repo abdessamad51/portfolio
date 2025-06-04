@@ -1,0 +1,44 @@
+<div class="port_projects_setions page_scroll" data-scroll="1" id="project_sec">
+    <div class="projects_section">
+        <div class="container_projects">
+            <div class="row justify-content-center">
+                 <div class="col-md-12">
+                <div class="port_heading_wrapper text-center mb-5">
+                    <div class="port_sub_heading_wrapper">
+                        <h2 class="port_sub_heading text-muted">Took a look</h2>
+                    </div>
+                    <h1 class="port_heading display-4 fw-bold">My Projects</h1>
+                </div>
+            </div>
+            </div>
+           
+            <div class="port_project_gallery">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 col-12" *ngFor="let project of projects;let i = index">
+                        <article class="project-card h-100" >
+                            <div class="project-thumbnail">
+                                <img [src]="project?.coverImage" [alt]="project.name">
+                                <div class="project-overlay">
+                                    <span class="category-tag">{{project.category}}</span>
+                                    <button class="explore-btn" (click)="openProject(project.id)">
+                                        <span>View Project</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>{{project.name}}</h3>
+                                <p>{{project.description}}</p>
+                                <div class="tech-stack">
+                                    <span class="tech-tag" *ngFor="let tech of project.technologies.split(',')">
+                                        {{tech}}
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

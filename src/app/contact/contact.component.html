@@ -1,0 +1,118 @@
+<div class="port_contact_wrapper page_scroll" data-scroll="3" id="contact_sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="port_heading_wrapper text-center mb-3">
+          <div class="port_sub_heading_wrapper">
+            <h2 class="port_sub_heading">Contact Us</h2>
+          </div>
+          <h1 class="port_heading">Get In Touch</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="port_contact_setions mt-5"
+    id="scroll_contact"
+    [ngStyle]="{ marginBottom: '80px' }"
+  >
+    <!-- start Contact section  -->
+    <div class="contact_section">
+      <div class="container">
+        <div
+          class="port_contact_mainbox"
+          [ngStyle]="{ marginTop: '-20px', marginBottom: '20px' }"
+        >
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <div class="port_hadding_style_sec">
+                <h2 class="port_head_wrapper">My Contact</h2>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="port_contact_form">
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          [ngClass]="{'is-invalid': submitted && contactForm.get('name')?.errors}"
+                          placeholder="Name"
+                          formControlName="name"
+                        />
+                        <div *ngIf="submitted && contactForm.get('name')?.errors" class="invalid-feedback">
+                          <div *ngIf="contactForm.get('name')?.errors?.['required']">Name is required</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input
+                          type="email"
+                          class="form-control"
+                          [ngClass]="{'is-invalid': submitted && contactForm.get('email')?.errors}"
+                          placeholder="Email"
+                          formControlName="email"
+                        />
+                        <div *ngIf="submitted && contactForm.get('email')?.errors" class="invalid-feedback">
+                          <div *ngIf="contactForm.get('email')?.errors?.['required']">Email is required</div>
+                          <div *ngIf="contactForm.get('email')?.errors?.['email']">Enter a valid email address</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          [ngClass]="{'is-invalid': submitted && contactForm.get('subject')?.errors}"
+                          placeholder="Subject"
+                          formControlName="subject"
+                        />
+                        <div *ngIf="submitted && contactForm.get('subject')?.errors" class="invalid-feedback">
+                          <div *ngIf="contactForm.get('subject')?.errors?.['required']">Subject is required</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-group">
+                        <textarea
+                          name="message"
+                          class="form-control"
+                          [ngClass]="{'is-invalid': submitted && contactForm.get('message')?.errors}"
+                          rows="3"
+                          placeholder="Message"
+                          formControlName="message"
+                        ></textarea>
+                        <div *ngIf="submitted && contactForm.get('message')?.errors" class="invalid-feedback">
+                          <div *ngIf="contactForm.get('message')?.errors?.['required']">Message is required</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="banner_btn">
+                        <button
+                          type="submit"
+                          data-type="contact"
+                          class="portfolio_btn btn_red submitForm"
+                        >
+                          <span class="first_text">Submit</span>
+                          <span class="second_text">Send</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="response"></div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End contact wrapper  -->

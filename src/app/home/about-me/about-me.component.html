@@ -1,0 +1,95 @@
+
+<div class="selfintro_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-5 col-lg-12 col-md-12">
+        <div class="about_leftsection" [ngClass]="{'open_details': isOpen}">
+          <div class="img_warapper">
+            <img
+              class="img-fluid"
+              src="assets/images/me_2.webp"
+              alt="About"
+              title="more information click + icon"
+            />
+            <div class="icon" title="more information click + icon" (click)="toggleDetails()">
+              <div class="iconbox">
+                <i class="fas fa-plus icon_plus" aria-hidden="true"></i>
+                <i class="fas fa-minus icon_minus" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          <div class="left_deatils">
+									<div class="personal_details">
+										<h1 class="ps_name">{{aboutMe?.name}}</h1>
+										<p class="ps_designation">{{aboutMe?.jobTitle}}</p>
+										<ul class="info-list">
+									
+
+											<li><span class="title">Address</span><span class="value">{{aboutMe?.address}}</span></li>
+											<li><span class="title">E-mail</span><span class="value"><a
+													href="mailto:{{aboutMe?.email}}">{{aboutMe?.email}}</a></span>
+											</li>
+										
+											<li><span class="title">Phone</span><span class="value"> <a href="tel:{{aboutMe?.phone}}">{{aboutMe?.phone}}</a>
+												</span></li>
+											<li><span class="title">Freelance</span><span
+													class="value available">Available</span></li>
+										</ul>
+
+										<ul class="social-links">
+										
+											<li><a class="tip social-button" href="https://www.linkedin.com/in/abdessamad-rami" target="_blank"><i
+														class="fab fa-linkedin-in"></i></a></li>
+											<li>
+                        <a class="tip social-button" href="https://wa.me/212702558750" target="_blank"><i
+														class="fab fa-whatsapp"></i></a>
+                          </li>
+										
+										
+										</ul>
+
+									</div>
+								</div>
+        </div>
+        
+      </div>
+      <div class="col-xl-7 col-lg-12 col-md-12">
+        <div class="right_section">
+          <div class="port_heading_wrapper py-0">
+            <div class="port_sub_heading_wrapper">
+              <h2 class="port_sub_heading">About Me</h2>
+            </div>
+          </div>
+          <h5 class="display-6 fw-bolder mb-2 text-dark mega-text">
+            {{ aboutMe?.title }}
+          </h5>
+          <p class="about_deatils" [innerHTML]="aboutMe?.bio"></p>
+          <div class="signature_box">
+            <div class="name">
+              <h2>{{ aboutMe?.name }}</h2>
+              <p>{{ aboutMe?.jobTitle }}</p>
+            </div>
+
+            <div class="signature">
+              <img src="assets/images/signature.png" alt="image" />
+            </div>
+          </div>
+          <div class="anout_section_btn">
+            <a (click)="downloadCV()" class="portfolio_btn btn_yellow">
+              <span class="first_text">Download CV</span>
+              <span class="second_text">Download</span>
+            </a>
+            <a
+              [routerLink]="['/contact']"
+              class="portfolio_btn btn_red"
+              id="redirect_contact"
+            >
+              <span class="first_text">Hire Me</span>
+              <span class="second_text">Contact</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

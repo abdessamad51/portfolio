@@ -1,0 +1,38 @@
+<div class="experience_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="port_heading_wrapper text-center pb-5">
+                    <div class="port_sub_heading_wrapper">
+                        <h2 class="port_sub_heading">Involvement</h2>
+                    </div>
+                    <h1 class="port_heading">My Experience</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-12" *ngFor="let experience of experiences;let isLast = last">
+                <div class="exprince_box ex_leftsidebox" [ngClass]="{ 'last-item': isLast }">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+                            <div class="ex_leftside">
+                                <h1>{{experience.dateStart}}</h1>
+                                <h4>{{experience.month}}</h4>
+                                <h1>{{experience.dateEnd}}</h1>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-12">
+                            <div class="ex_rightside">
+                                <h4>{{experience.title}}</h4>
+                                <span class="c-pink">{{experience.company}} | {{experience.type}}</span>
+                                <p class="ex_details">{{experience.shortDescription}}</p>
+                                <p class="more_content"  #contentRef id="{{experience.title}}_content">{{experience.description}}</p>
+                                <a class="ex_btn" id="{{experience.title}}" (click)="readMore(contentRef,$event)">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                  </div>
+    </div>
