@@ -608,7 +608,7 @@ transform: translate(-50%,-50%);
 	margin:0;
 	padding:0;
 }
-.port_bannerbg_wrapper {
+/* .port_bannerbg_wrapper {
     background: url('../images/banner_bg.png');
 	background-size:cover;
 	-webkit-animation: moveup 50s linear infinite;
@@ -621,7 +621,7 @@ transform: translate(-50%,-50%);
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
-}
+} */
 
 
 
@@ -769,9 +769,7 @@ transform: scale(1)!important;
     position: relative;
     overflow: hidden;
 }
-.port_sec_warapper {
-    margin-left: 120px;
-}
+
 
 .selfintro_section .right_section .port_about_title {
     margin-top: 15px;
@@ -1642,6 +1640,8 @@ h3.education_place {
 
 
 }
+
+
 @media (max-width:575px) {
     .education_secondbox .education_left .edu_mainyear h1 {
         top: -433px;
