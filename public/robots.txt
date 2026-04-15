@@ -1,0 +1,11 @@
+# User-agent: * applies to all search engines
+User-agent: *
+Allow: /
+Allow: /_next/static/
+
+# Block private API routes or internal development files
+Disallow: /api/
+Disallow: /_next/data/
+
+# Link to your sitemap
+Sitemap: https://allaoua.vercel.app/sitemap.xml
